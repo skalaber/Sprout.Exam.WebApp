@@ -1,0 +1,5 @@
+I would create or implement a client side validation before post
+
+I would put in search capabilities to the employee list, add the salary and other needed fiels on the employee
+
+I would implement automapper to do the mapping of dto/entities/models and write more/better tests
