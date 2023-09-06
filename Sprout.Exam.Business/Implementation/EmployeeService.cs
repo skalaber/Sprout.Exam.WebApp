@@ -3,6 +3,7 @@ using Sprout.Exam.Business.Extensions;
 using Sprout.Exam.Business.Factory;
 using Sprout.Exam.Business.Interface;
 using Sprout.Exam.DataAccess.Interface;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -39,10 +40,10 @@ namespace Sprout.Exam.Business.Implementation
         public decimal? Calculate(IEmployee employee, decimal? absentDays, decimal? workedDays)
         {
             if (employee is RegularEmployee && absentDays.HasValue)
-                return employee.Calculate(absentDays.Value);
+                return Math.Round(employee.Calculate(absentDays.Value), 2);
 
             if (employee is ContractualEmployee && workedDays.HasValue)
-                return employee.Calculate(workedDays.Value);
+                return Math.Round(employee.Calculate(workedDays.Value), 2);
 
             return null;
         }
